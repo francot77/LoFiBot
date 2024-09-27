@@ -7,12 +7,9 @@ export const handleInteraction = async (interaction) => {
 
   const player = useMainPlayer();
   let queue = player.nodes.get(interaction.guildId);
-  
   if (!queue) {
     queue = player.nodes.create(interaction.guild, {
       metadata: interaction.channel,
-      leaveOnEnd: false,
-      leaveOnStop: false,
     });
   }
   
